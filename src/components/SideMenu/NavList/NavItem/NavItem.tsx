@@ -2,14 +2,22 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { useMemo } from "react";
 
-interface NavItemProps {
+export interface NavItemProps {
+  /** ID */
+  id: number;
+  /** ラベル */
   label: string;
+  /** リンク先 */
   link: string;
+  /** アイコン */
   icon: React.ReactNode;
 }
-
+/**
+ * メニュー項目
+ * @param param0 パラメータ
+ * @returns メニュー項目のコンポーネント
+ */
 const NavItem: React.FC<NavItemProps> = ({ label, link, icon }) => {
   const pathname = usePathname()
   const activeClassName = pathname === link ? 'bg-gray-600 border-r-4 border-r-pink-500': '';

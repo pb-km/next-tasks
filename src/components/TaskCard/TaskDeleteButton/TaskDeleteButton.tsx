@@ -9,17 +9,29 @@ interface TaskDeleteButtonProps {
   id: string;
 }
 
+/**
+ * 削除ボタン
+ * @param param0 パラメータ
+ * @returns 削除ボタンのコンポーネント
+ */
 const TaskDeleteButton: React.FC<TaskDeleteButtonProps> = ({ id }) => {
   const deleteTaskWithId = deleteTask.bind(null, id);
   const initialState: FormState = { error: "" };
   const [state, formAction] = useFormState(deleteTaskWithId, initialState);
 
+  /**
+   * ステート変更時のイベント
+   */
   useEffect(() => {
     if (state && state.error !== "") {
       alert(state.error);
     }
   }, [state]);
 
+  /**
+   * 削除ボタン
+   * @returns 削除ボタンのコンポーネント
+   */
   const SubmitButton = () => {
     const { pending } = useFormStatus();
 

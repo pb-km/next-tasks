@@ -1,5 +1,9 @@
 import React from "react";
 
+/**
+ * ローディングコンポーネント
+ * @returns ローディングコンポーネント
+ */
 const loading = () => {
   return (
     <div

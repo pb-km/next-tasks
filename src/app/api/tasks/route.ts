@@ -2,6 +2,10 @@ import { connectDb } from "@/utils/database";
 import { TaskDocument, TaskModel } from "@/models/task";
 import { NextResponse } from "next/server";
 
+/**
+ * 全タスクの取得
+ * @returns レスポンス
+ */
 export const GET = async () => {
   try {
     await connectDb();

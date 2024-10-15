@@ -1,6 +1,10 @@
 import TaskCard from "@/components/TaskCard/TaskCard";
 import { TaskDocument } from "@/models/task";
 
+/**
+ * 完了タスクの取得
+ * @returns 完了タスク
+ */
 const getCompletedTasks = async (): Promise<TaskDocument[]> => {
   const response = await fetch(`${process.env.API_URL}/tasks/completed`, {
     cache: "no-store",
@@ -14,6 +18,10 @@ const getCompletedTasks = async (): Promise<TaskDocument[]> => {
   return data.tasks as TaskDocument[];
 };
 
+/**
+ * 完了タスクページ
+ * @returns 完了タスクページのコンポーネント
+ */
 const CompletedTaskPage = async () => {
   const completedTasks = await getCompletedTasks();
 

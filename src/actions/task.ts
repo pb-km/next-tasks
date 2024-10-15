@@ -8,6 +8,12 @@ export interface FormState {
   error: string;
 }
 
+/**
+ * タスク作成
+ * @param state ステート
+ * @param formData 画面のデータ
+ * @returns ステート
+ */
 export const createTask = async (state: FormState, formData: FormData) => {
   const newTask: Task = {
     title: formData.get("title") as string,
@@ -27,6 +33,13 @@ export const createTask = async (state: FormState, formData: FormData) => {
   redirect("/");
 };
 
+/**
+ * タスク更新
+ * @param id ID
+ * @param state ステート
+ * @param formData 画面のデータ
+ * @returns ステート
+ */
 export const updateTask = async (
   id: string,
   state: FormState,
@@ -50,7 +63,12 @@ export const updateTask = async (
   redirect("/");
 };
 
-
+/**
+ * タスク削除
+ * @param id ID
+ * @param state ステート
+ * @returns ステート
+ */
 export const deleteTask = async (
   id: string,
   state: FormState

@@ -1,6 +1,10 @@
 import TaskCard from "@/components/TaskCard/TaskCard"
 import { TaskDocument } from "@/models/task";
 
+/**
+ * 期限切れタスクの取得
+ * @returns 期限切れタスク
+ */
 const getExpiredTasks = async (): Promise<TaskDocument[]> => {
   const response = await fetch(`${process.env.API_URL}/tasks/expired`, {
     cache: "no-store",
@@ -14,6 +18,10 @@ const getExpiredTasks = async (): Promise<TaskDocument[]> => {
   return data.tasks as TaskDocument[];
 };
 
+/**
+ * 期限切れタスクページ
+ * @returns 期限切れタスクページのコンポーネント
+ */
 const ExpiredTaskPage = async() => {
   const expiredTasks = await getExpiredTasks();
 

@@ -3,6 +3,10 @@ import Link from "next/link";
 import { MdAddTask } from "react-icons/md";
 import TaskCard from "../../components/TaskCard/TaskCard";
 
+/**
+ * 全タスクの取得
+ * @returns 全タスク
+ */
 const getAllTasks = async (): Promise<TaskDocument[]> => {
   const response = await fetch(`${process.env.API_URL}/tasks`, {
     cache: "no-store",
@@ -16,6 +20,10 @@ const getAllTasks = async (): Promise<TaskDocument[]> => {
   return data.tasks as TaskDocument[];
 };
 
+/**
+ * メインページ
+ * @returns メインページのコンポーネント
+ */
 export default async function MainPage() {
   const allTasks = await getAllTasks();
 

@@ -1,5 +1,9 @@
 import NewTaskForm from "@/components/NewTaskForm/NewTaskForm";
 
+/**
+ * 新規タスクページ
+ * @returns 新規タスクページのコンポーネント
+ */
 const NewTaskPage = () => {
   return (
     <div className='flex flex-col justify-center py-20'>

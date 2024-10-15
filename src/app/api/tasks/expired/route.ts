@@ -2,6 +2,10 @@ import { connectDb } from "@/utils/database";
 import { TaskDocument, TaskModel } from "@/models/task";
 import { NextResponse } from "next/server";
 
+/**
+ * 期限切れタスクの取得
+ * @returns レスポンス
+ */
 export const GET = async () => {
   const currentDate = new Date()
     .toLocaleDateString("ja-JP", {

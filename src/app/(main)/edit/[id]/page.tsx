@@ -5,6 +5,11 @@ interface Params {
   params: { id: string };
 }
 
+/**
+ * 編集ページ
+ * @param id ID
+ * @returns 編集ページのコンポーネント
+ */
 const getTask = async (id: string): Promise<TaskDocument> => {
   const response = await fetch(`${process.env.API_URL}/tasks/${id}`, {
     cache: "no-store",
@@ -13,9 +18,13 @@ const getTask = async (id: string): Promise<TaskDocument> => {
   return data.task as TaskDocument;
 };
 
+/**
+ * 編集ページ
+ * @param param0 パラメータ
+ * @returns 編集ページのコンポーネント
+ */
 const EditTaskPage = async ({ params }: Params) => {
-  const id = params.id;
-  const task = await getTask(id);
+  const task = await getTask(params.id);
 
   return (
     <div className="flex flex-col justify-center py-20">

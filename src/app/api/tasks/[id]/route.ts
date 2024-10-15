@@ -2,9 +2,19 @@ import { TaskModel } from "@/models/task";
 import { connectDb } from "@/utils/database";
 import { NextRequest, NextResponse } from "next/server";
 
+interface Props {
+  params: { id: string }
+}
+
+/**
+ * IDによるタスクの取得
+ * @param _ リクエスト
+ * @param param1 パラメータ
+ * @returns レスポンス
+ */
 export const GET = async (
   _: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: Props
 ) => {
   try {
     await connectDb();

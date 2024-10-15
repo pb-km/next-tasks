@@ -6,6 +6,11 @@ interface TaskCardProps {
   task: TaskDocument;
 }
 
+/**
+ * タスクカード
+ * @param param0 パラメータ
+ * @returns タスクカードのコンポーネント
+ */
 const TaskCard: React.FC<TaskCardProps> = ({ task }) => {
   return (
     <div className="w-64 h-52 p-4 bg-white rounded-md shadow-md flex flex-col justify-between">

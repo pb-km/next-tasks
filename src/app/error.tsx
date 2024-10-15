@@ -2,6 +2,10 @@
 
 import Link from "next/link";
 
+/**
+ * エラーページ 
+ * @returns エラーページのコンポーネント
+ */
 const ErrorPage = () => {
   return (
     <div className="h-screen flex flex-col justify-center items-center bg-slate-50 text-gray-900">
