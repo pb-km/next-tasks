@@ -23,7 +23,7 @@ const NavItem: React.FC<NavItemProps> = ({ label, link, icon }) => {
   const activeClassName = pathname === link ? 'bg-gray-600 border-r-4 border-r-pink-500': '';
   return (
     <Link href={link} className={'flex p-4 items-center w-full hover:bg-gray-700 font-medium ' + activeClassName}>
-      <div>{icon}</div>
+      <div className="mr-2">{icon}</div>
       <div>{label}</div>
     </Link>
   );

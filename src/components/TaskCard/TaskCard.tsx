@@ -19,7 +19,7 @@ const TaskCard: React.FC<TaskCardProps> = ({ task }) => {
         <div className="mt-1 text-sm line-clamp-3">{task.description}</div>
       </header>
       <div>
-        <div className="text-sm">{task.dueDate}</div>
+        <div className="text-sm mb-2">{task.dueDate.replaceAll("-", "/")}</div>
         <div className="flex justify-between items-center">
           <div
             className={`mt-l text-sm px-2 py-1 w-24 text-center text-white rounded-full shadow-sm ${
